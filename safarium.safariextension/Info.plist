@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Lucy Lin</string>
+	<key>Builder Version</key>
+	<string>11601.6.17</string>
+	<key>CFBundleDisplayName</key>
+	<string>Safarium</string>
+	<key>CFBundleIdentifier</key>
+	<string>paideia.safarium</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Database Quota</key>
+		<integer>1048576</integer>
+		<key>Global Page</key>
+		<string>popup.html</string>
+		<key>Menus</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>menu</string>
+				<key>Menu Items</key>
+				<array>
+					<dict>
+						<key>Command</key>
+						<string>latin</string>
+						<key>Disabled</key>
+						<false/>
+						<key>Identifier</key>
+						<string>latin</string>
+						<key>Title</key>
+						<string>Translate Latin</string>
+					</dict>
+					<dict>
+						<key>Command</key>
+						<string>greek</string>
+						<key>Disabled</key>
+						<false/>
+						<key>Identifier</key>
+						<string>greek</string>
+						<key>Title</key>
+						<string>Translate Greek</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>popup.html</string>
+				<key>Height</key>
+				<integer>150</integer>
+				<key>Identifier</key>
+				<string>popup</string>
+				<key>Width</key>
+				<integer>350</integer>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>safarium</string>
+				<key>Image</key>
+				<string>paideia-favicon.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>Safarium</string>
+				<key>Menu</key>
+				<string>menu</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>contentscripts/paideiafy.js</string>
+			</array>
+			<key>Start</key>
+			<array>
+				<string>popup.js</string>
+				<string>jquery-1.11.1.min.js</string>
+			</array>
+		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>contentscripts/my.css</string>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>Look up Latin or Greek words directly in your webpage.</string>
+	<key>DeveloperIdentifier</key>
+	<string>0000000000</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>http://www.paideiainstitute.org/chromium</string>
+</dict>
+</plist>

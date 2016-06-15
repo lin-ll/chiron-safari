@@ -1,0 +1,45 @@
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<body>
+  <style>
+    .btn {
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      background-color: aliceblue;
+      color: black;
+      border: 2px solid aliceblue;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: black;
+    }
+    .btn:active {
+      background-color: aliceblue;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  </style>
+  <div class='container' style='width:350px;'>
+    <div class='col-md-12 text-center panel'>
+      <h5>Chromium Reader</h5>
+      <hr style='padding: 0; margin: 15px;'>
+      <div id='paideia-explained' style='font-size: 12px;'>
+      Toggle the buttons to turn on Latin or Greek translations. Just double-click any word, and you'll see the English translation in a blue panel top right.
+      </div>
+      <br>
+      <div>
+        <button class='btn btn-default' id='paideia-latin'>Translate Latin</button>
+        <button class='btn btn-default' id='paideia-greek'>Translate Greek</button>
+      </div>
+      <script type="text/javascript" src="popup.js"></script>
+    </div>
+  </div>
+</body>
+</html>
