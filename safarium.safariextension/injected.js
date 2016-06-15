@@ -1,3 +1,11 @@
+safari.self.addEventListener("message", handleMessage, false);
+console.log('running paideiafy.js');
+
+function handleMessage(msgEvent) {
+    var messageData = msgEvent.message;
+    runPaideiaChromium(messageData);
+}
+
 function anotherDictionary (word) {
   return '<p>Try this word in another dictionary: </p>' +
     '<ul class="another-dict">' +
@@ -5,8 +13,6 @@ function anotherDictionary (word) {
       '<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=&lang=greek">Perseus LSJ</a></li>' +
     '</ul>'
 };
-
-console.log('running paideiafy.js');
 
 function rmPanel() {
   var last = document.getElementById('paideia-panel');
@@ -96,36 +102,6 @@ function paidieaify(word, language) {
 
 function runPaideiaChromium(language) {
   document.body.addEventListener('dblclick', function(info) {
-    console.log("received doubleclick");
-    paidieaify(window.getSelection().toString(), language);
+      paidieaify(window.getSelection().toString(), language);
   });
 }
-
-function paideiafy(language) {
-  // chrome.tabs.insertCSS({
-  //   file: 'contentscripts/my.css'
-  // });
-  // chrome.tabs.executeScript({
-  //   file: 'contentscripts/paideiafy.js'
-  // });
-
-  var runScript;
-  if (language === 'latin') {
-    runPaideiaChromium("latin");
-  } else {
-    runPaideiaChromium("greek");
-  }
-
-  // chrome.tabs.executeScript({
-  //   code: runScript,
-  // });
-}
-
-var button = safari.extension.popover.contentWindow;
-safari.application.getElementById('paideia-latin').addEventListener('click', function() { paideiafy('latin') });
-safari.application.getElementById('paideia-greek').addEventListener('click', function() { paideiafy('greek') });
-
-// document.getElementById('paideia-latin').addEventListener('click', function() { paideiafy('latin') });
-// document.getElementById('paideia-greek').addEventListener('click', function() { paideiafy('greek') });
-
-// should also have scrolling capacity for large entries.
