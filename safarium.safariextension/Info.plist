@@ -77,6 +77,10 @@
 				<string>jquery-1.11.1.min.js</string>
 			</array>
 		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>my.css</string>
+		</array>
 	</dict>
 	<key>Description</key>
 	<string>Look up Latin or Greek words directly in your webpage.</string>
