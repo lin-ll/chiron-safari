@@ -38,12 +38,18 @@
         <button class='btn btn-default' id='paideia-latin'>Translate Latin</button>
         <button class='btn btn-default' id='paideia-greek'>Translate Greek</button>
       </div>
+      <br />
+      <button class='btn btn-default' id='quizlet'>Get Quizlet-importable List</button>
       <script type="text/javascript">
 		document.getElementById('paideia-latin').addEventListener('click', function() { 
 			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "latin"); 
 		});
 		document.getElementById('paideia-greek').addEventListener('click', function() { 
 			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "greek"); 
+		});
+		document.getElementById('quizlet').addEventListener('click', function() { 
+			// alert("quizlet!!");
+			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("quizlet", ""); 
 		});
       </script>
     </div>

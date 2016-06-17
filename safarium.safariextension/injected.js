@@ -2,6 +2,7 @@ safari.self.addEventListener("message", handleMessage, false);
 console.log('running injected.js');
 var event = 0;
 var lang;
+var saved = "";
 
 function handleMessage(msgEvent) {
 	var messageName = msgEvent.name;
@@ -15,6 +16,7 @@ function handleMessage(msgEvent) {
     	}
     }
     else if (messageName == "ajax") parseAjax(messageData);
+    else if (messageName == "quizlet") alert(saved);
     else alert("Error!");
 }
 
@@ -27,6 +29,12 @@ function parseAjax(response) {
 	resultFound = perseus.find('.lemma').html(); // will be undefined if perseus finds no results
     if (resultFound) {
 		var header = lemma.find('.lemma_header').prop('outerHTML');
+		//console.log(lemma.find('.lemma_definition')[0]);
+		// alert(lemma.find('.lemma_definition')[0]);
+		//console.log(lemma.getElementsByClassName('lemma_definition'));
+		var def = lemma.find('.lemma_definition')[0];
+		saved += word + '\t' + def.innerHTML.trim() + '\n';
+		console.log(saved);
 		table = lemma.find('table').addClass('paideia-table').prop('outerHTML');
 		insertDiv('<div id="paideia-panel"><button id="remove" style="float: right;">X</button>' + header + "<br />" + table + anotherDictionary(word) + thanks + '</div>');
 		$('#remove').click(rmPanel);

@@ -56,7 +56,7 @@
 				<key>Filename</key>
 				<string>popup.html</string>
 				<key>Height</key>
-				<integer>200</integer>
+				<integer>280</integer>
 				<key>Identifier</key>
 				<string>popup</string>
 				<key>Width</key>
@@ -69,7 +69,7 @@
 				<key>Identifier</key>
 				<string>safarium</string>
 				<key>Image</key>
-				<string>paideia-favicon.png</string>
+				<string>Icon.png</string>
 				<key>Include By Default</key>
 				<true/>
 				<key>Label</key>
