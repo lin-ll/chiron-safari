@@ -3,15 +3,11 @@
 </head>
 <body>
 <script type="text/javascript" charset="utf-8">
-    // Set up the Listener
     safari.application.addEventListener("command", performCommand, false);
     safari.application.addEventListener("message", handleMessage, false);
 
     function performCommand(event) {
-    	if (event.command == "safarium") {
-    		alert("Long click on the extension to show the options. Select an option to turn on Latin or Greek translations. Then, just double-click any word on your page, and you'll see the translation in a blue panel top right.");
-    	}
-        else if (event.command == "latin") {
+    	if (event.command == "latin") {
             safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "latin");
         }
         else if (event.command == "greek") {
@@ -28,7 +24,6 @@
 		xhttp.onreadystatechange = function() {
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
 				var response = [word, xhttp.responseText];
-				// alert(response);
 				safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("ajax", response);
 			}
 		};
