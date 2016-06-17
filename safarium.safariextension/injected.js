@@ -1,11 +1,19 @@
 safari.self.addEventListener("message", handleMessage, false);
 console.log('running injected.js');
+var event = 0;
+var lang;
 
 function handleMessage(msgEvent) {
 	var messageName = msgEvent.name;
     var messageData = msgEvent.message;
     // alert("back in injected");
-    if (messageName == "language") runPaideiaChromium(messageData);
+    if (messageName == "language") {
+    	if (event == 0) runPaideiaChromium(messageData);
+    	else {
+    		if (messageData == "latin") lang = "la";
+    		else lang = "greek";
+    	}
+    }
     else if (messageName == "ajax") parseAjax(messageData);
     else alert("Error!");
 }
@@ -76,8 +84,11 @@ function manualSearch(word) {
 }
 
 function runPaideiaChromium(language) {
-	if (language == "latin") language = "la";
+	event = 1;
+	if (language == "latin") lang = "la";
+	else lang = "greek";
 	document.body.addEventListener('dblclick', function(info) {
-		safari.self.tab.dispatchMessage("selected", [window.getSelection().toString(), language]);
+		console.log("language = " + lang);
+		safari.self.tab.dispatchMessage("selected", [window.getSelection().toString(), lang]);
 	});
 }
