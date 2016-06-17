@@ -32,6 +32,8 @@
 					<dict>
 						<key>Command</key>
 						<string>latin</string>
+						<key>Disabled</key>
+						<false/>
 						<key>Identifier</key>
 						<string>latin</string>
 						<key>Title</key>
@@ -51,6 +53,8 @@
 		<key>Toolbar Items</key>
 		<array>
 			<dict>
+				<key>Command</key>
+				<string>safarium</string>
 				<key>Identifier</key>
 				<string>safarium</string>
 				<key>Image</key>

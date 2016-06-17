@@ -23,14 +23,15 @@ function parseAjax(response) {
 	var toReturn = response[1];
 	var thanks = '<hr style="margin-top: 2em;" /><footer style="font-size:10px; text-align: left;">Morphology provided by Morpheus from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> at Tufts University.</footer>';
 	var perseus = $('<div/>').html(toReturn).contents();
-		lemma = perseus.find('.lemma');
-		resultFound = perseus.find('.lemma').html(); // will be undefined if perseus finds no results
+	lemma = perseus.find('.lemma');
+	resultFound = perseus.find('.lemma').html(); // will be undefined if perseus finds no results
     if (resultFound) {
 		var header = lemma.find('.lemma_header').prop('outerHTML');
-		    table = lemma.find('table').addClass('paideia-table').prop('outerHTML');
-		insertDiv('<div id="paideia-panel">' + header + "<br />" + table + anotherDictionary(word) + thanks + '</div>');
-		$('#paideia-panel').click(rmPanel);
-    } else manualSearch(word);
+		table = lemma.find('table').addClass('paideia-table').prop('outerHTML');
+		insertDiv('<div id="paideia-panel"><button id="remove" style="float: right;">X</button>' + header + "<br />" + table + anotherDictionary(word) + thanks + '</div>');
+		$('#remove').click(rmPanel);
+    } 
+    else manualSearch(word);
 }
 
 function anotherDictionary(word) {
