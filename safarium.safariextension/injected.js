@@ -7,7 +7,6 @@ var saved = "";
 function handleMessage(msgEvent) {
 	var messageName = msgEvent.name;
     var messageData = msgEvent.message;
-    // alert("back in injected");
     if (messageName == "language") {
     	if (event == 0) runPaideiaChromium(messageData);
     	else {
@@ -22,7 +21,8 @@ function handleMessage(msgEvent) {
 
 function quizlet() {
 	insertDiv('<div id="paideia-panel"><b>Just copy and paste the text below into the import space when creating a Quizlet set.</b><br>' + 
-		'<div id="vocab"><pre style="font-size: 12px; font-family: Geneva, sans-serif; text-align: left;">' + saved + '</pre></div>' + 
+		'<div id="vocab"><pre style="font-size: 12px; font-family: Geneva, sans-serif; text-align: left;">' + 
+		saved + '</pre></div>' + 
 		'<button id="copy">Highlight, then Ctrl/Cmd-C to copy!</button>' + 
 		'<button id="go-quizlet">Open Quizlet in new tab!</button>' + 
 		'<button id="remove">Close</button></div>');
@@ -68,7 +68,10 @@ function parseAjax(response) {
 }
 
 function anotherDictionary(word) {
-	return '<p>Try this word in another dictionary: </p>' + '<ul class="another-dict">' + '<li><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></li>' + '<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=&lang=greek">Perseus LSJ</a></li>' + '</ul>'
+	return '<p>Try this word in another dictionary: </p>' + 
+	'<ul class="another-dict">' + 
+	'<li><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></li>' + 
+	'<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=&lang=greek">Perseus LSJ</a></li>' + '</ul>'
 }
 
 function rmPanel() {
@@ -79,7 +82,7 @@ function rmPanel() {
 function insertDiv(child) {
 	var div = document.createElement('div');
 	div.setAttribute('id', 'paideia-panel');
-	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; border: 1px solid #007095; border-radius: 2em; max-width: 34em; word-wrap: break-word; background-color: aliceblue; z-index:999;');
+	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; border: 1px solid #007095; border-radius: 2em; max-width: 34em; word-wrap: normal; background-color: aliceblue; z-index:999;');
 
 	rmPanel()
 
