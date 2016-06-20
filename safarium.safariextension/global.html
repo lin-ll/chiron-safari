@@ -17,19 +17,24 @@
     }
 
     function handleMessage(msgEvent) {
-    	var word = msgEvent.message[0];
-    	var langCode = msgEvent.message[1];
+    	if (msgEvent.name == "open-quizlet") {
+    		safari.application.activeBrowserWindow.openTab().url = msgEvent.message;
+    	}
+    	else {
+	    	var word = msgEvent.message[0];
+	    	var langCode = msgEvent.message[1];
 
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (xhttp.readyState == 4 && xhttp.status == 200) {
-				var response = [word, xhttp.responseText];
-				safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("ajax", response);
-			}
-		};
-		xhttp.open("GET", 'http://www.perseus.tufts.edu/hopper/morph?l='+ word + '&la='+langCode, true);
-		xhttp.setRequestHeader("cache-control", "no-cache");
-		xhttp.send();
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+					var response = [word, xhttp.responseText];
+					safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("ajax", response);
+				}
+			};
+			xhttp.open("GET", 'http://www.perseus.tufts.edu/hopper/morph?l='+ word + '&la='+langCode, true);
+			xhttp.setRequestHeader("cache-control", "no-cache");
+			xhttp.send();
+		}
     }
 </script>
 </body>

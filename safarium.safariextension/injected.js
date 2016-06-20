@@ -16,8 +16,33 @@ function handleMessage(msgEvent) {
     	}
     }
     else if (messageName == "ajax") parseAjax(messageData);
-    else if (messageName == "quizlet") alert(saved);
+    else if (messageName == "quizlet") quizlet();
     else alert("Error!");
+}
+
+function quizlet() {
+	insertDiv('<div id="paideia-panel"><b>Just copy and paste the text below into the import space when creating a Quizlet set.</b><br>' + 
+		'<div id="vocab"><pre style="font-size: 12px; font-family: Geneva, sans-serif; text-align: left;">' + saved + '</pre></div>' + 
+		'<button id="copy">Highlight, then Ctrl/Cmd-C to copy!</button>' + 
+		'<button id="go-quizlet">Open Quizlet in new tab!</button>' + 
+		'<button id="remove">Close</button></div>');
+	$('#remove').click(rmPanel);
+	document.getElementById('copy').addEventListener('click', function() { selectText('vocab'); });
+	document.getElementById('go-quizlet').addEventListener('click', function() {
+		safari.self.tab.dispatchMessage("open-quizlet", "https://quizlet.com/create-set");
+	});
+}
+
+function selectText(containerid) {
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select();
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+    }
 }
 
 function parseAjax(response) {

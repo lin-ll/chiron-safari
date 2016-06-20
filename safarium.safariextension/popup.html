@@ -31,15 +31,15 @@
       <h5>Chromium Reader</h5>
       <hr style='padding: 0; margin: 15px;'>
       <div id='paideia-explained' style='font-size: 12px;'>
-      Toggle the buttons to turn on Latin or Greek translations. Just double-click any word, and you'll see the English translation in a blue panel top right.
+      Toggle the buttons to turn on Latin or Greek translations. Just double-click any word, and you'll see the English translation in a blue panel top right. Click Get Quizlet-Importable List and the words you've double-clicked in this session will appear in a blue panel top right.
       </div>
       <br>
       <div>
         <button class='btn btn-default' id='paideia-latin'>Translate Latin</button>
         <button class='btn btn-default' id='paideia-greek'>Translate Greek</button>
       </div>
-      <br />
-      <button class='btn btn-default' id='quizlet'>Get Quizlet-importable List</button>
+      <br>
+      <button class='btn btn-default' id='quizlet'>Get Quizlet-Importable List</button>
       <script type="text/javascript">
 		document.getElementById('paideia-latin').addEventListener('click', function() { 
 			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "latin"); 
@@ -48,7 +48,6 @@
 			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "greek"); 
 		});
 		document.getElementById('quizlet').addEventListener('click', function() { 
-			// alert("quizlet!!");
 			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("quizlet", ""); 
 		});
       </script>
