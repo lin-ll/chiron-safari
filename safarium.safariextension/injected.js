@@ -1,3 +1,14 @@
+/* ********
+  AUTHOR: Lucy Lin
+  DATE: 21 June 2016 (Tuesday)
+  DESCRIPTION:
+  	enable double click to transform selected word into either greek or latin
+    enable quizlet functionality
+    fixed glitch that would toggle between Latin and Greek definitions when clicking the popup in the same session more than once
+  NOTES:
+  	jquery preloaded in using Safari Extensionbuilder
+  	injected into page using Safari Extensionbuilder
+******** */
 safari.self.addEventListener("message", handleMessage, false);
 console.log('running injected.js');
 var event = 0;

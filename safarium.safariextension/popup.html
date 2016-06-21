@@ -1,3 +1,10 @@
+<!-- 
+  AUTHOR: Lucy Lin
+  DATE: 21 June 2016 (Tuesday)
+  DESCRIPTION:
+    makes the popup html with the Translate options and description and other buttons
+  NOTES:
+-->
 <html>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <body>
@@ -28,10 +35,10 @@
   </style>
   <div class='container' style='width:350px;'>
     <div class='col-md-12 text-center panel'>
-      <h5>Chromium Reader</h5>
+      <h5>Safarium Reader</h5>
       <hr style='padding: 0; margin: 15px;'>
       <div id='paideia-explained' style='font-size: 12px;'>
-      Toggle the buttons to turn on Latin or Greek translations. Just double-click any word, and you'll see the English translation in a blue panel top right. Click the Quizlet button to see the words you've double-clicked in this session in a blue panel top right.
+        Toggle the buttons to turn on Latin or Greek translations. Just double-click any word, and you'll see the English translation in a blue panel top right. Click the Quizlet button to see the words you've double-clicked in this session in a blue panel top right.
       </div>
       <br>
       <div>
@@ -41,15 +48,15 @@
       <br>
       <button class='btn btn-default' id='quizlet'>Get Quizlet-Importable List</button>
       <script type="text/javascript">
-		document.getElementById('paideia-latin').addEventListener('click', function() { 
-			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "latin"); 
-		});
-		document.getElementById('paideia-greek').addEventListener('click', function() { 
-			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "greek"); 
-		});
-		document.getElementById('quizlet').addEventListener('click', function() { 
-			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("quizlet", ""); 
-		});
+        document.getElementById('paideia-latin').addEventListener('click', function() { 
+          safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "latin"); 
+        });
+        document.getElementById('paideia-greek').addEventListener('click', function() { 
+          safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("language", "greek"); 
+        });
+    		document.getElementById('quizlet').addEventListener('click', function() { 
+    			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("quizlet", ""); 
+    		});
       </script>
     </div>
   </div>
