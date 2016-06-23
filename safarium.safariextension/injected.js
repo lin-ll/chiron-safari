@@ -59,6 +59,7 @@ function selectText(containerid) {
 function parseAjax(response) {
 	var word = response[0];
 	var toReturn = response[1];
+	// console.log(response[2]);
 	var thanks = '<hr style="margin-top: 2em;" /><footer style="font-size:10px; text-align: left;">Morphology provided by Morpheus from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> at Tufts University.</footer>';
 	var perseus = $('<div/>').html(toReturn).contents();
 	lemma = perseus.find('.lemma');
@@ -68,8 +69,9 @@ function parseAjax(response) {
 		//console.log(lemma.find('.lemma_definition')[0]);
 		// alert(lemma.find('.lemma_definition')[0]);
 		//console.log(lemma.getElementsByClassName('lemma_definition'));
-		var def = lemma.find('.lemma_definition')[0];
-		saved += word + '\t' + def.innerHTML.trim() + '\n';
+		var def = lemma.find('.lemma_definition')[0].innerHTML;
+		var word_saved = lemma.find('.' + lang)[0].innerHTML;
+		saved += word_saved + '\t' + def.trim() + '\n';
 		console.log(saved);
 		table = lemma.find('table').addClass('paideia-table').prop('outerHTML');
 		insertDiv('<div id="paideia-panel"><button id="remove" style="float: right;">X</button>' + header + "<br />" + table + anotherDictionary(word) + thanks + '</div>');
@@ -81,8 +83,10 @@ function parseAjax(response) {
 function anotherDictionary(word) {
 	return '<p>Try this word in another dictionary: </p>' + 
 	'<ul class="another-dict">' + 
-	'<li><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></li>' + 
-	'<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=&lang=greek">Perseus LSJ</a></li>' + '</ul>'
+		'<li><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></li>' + 
+		'<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=' + 
+			word + '&lang=' + lang + '">Perseus LSJ</a></li>' + 
+	'</ul>'
 }
 
 function rmPanel() {
@@ -93,7 +97,7 @@ function rmPanel() {
 function insertDiv(child) {
 	var div = document.createElement('div');
 	div.setAttribute('id', 'paideia-panel');
-	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; border: 1px solid #007095; border-radius: 2em; max-width: 34em; word-wrap: normal; background-color: aliceblue; z-index:999;');
+	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; border: 1px solid #007095; border-radius: 2em; max-width: 34em; word-wrap: break-word; background-color: aliceblue; z-index:999;');
 
 	rmPanel()
 
@@ -118,9 +122,7 @@ function manualSearch(word) {
 		'  <div style="text-align:center;">' +
 		'    <button class="paideia-button" type="submit" id="manual-paideia-search">Search</button>' +
 		'    <button class="paideia-button" id="cancel-paideia">Cancel</button>' +
-		'  </div>' +
-		'</div>' +
-		'</div></div>'
+		'  </div>' + '</div>' + '</div></div>'
 	);
 	$('#manual-paideia-search').click(function() {
 		var manualPaideiaEntry = $('#manual-paideia-entry').val();
