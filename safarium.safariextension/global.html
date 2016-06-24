@@ -35,16 +35,6 @@
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (xhttp.readyState == 4 && xhttp.status == 200) {
-					// var xhttp2 = new XMLHttpRequest();
-					// xhttp2.onreadystatechange = function() {
-					// 	if (xhttp2.readyState == 4 && xhttp2.status == 200) {
-					// 		var response = [word, xhttp.responseText, xhttp2.responseText];
-					// 		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("ajax", response);
-					// 	}
-					// };
-					// xhttp2.open("GET", 'http://104.130.11.126/get_whitaker.php?word='+ word, true);
-					// xhttp2.setRequestHeader("cache-control", "no-cache");
-					// xhttp2.send();
 					var response = [word, xhttp.responseText];
 					safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("ajax", response);
 				}
@@ -52,17 +42,6 @@
 			xhttp.open("GET", 'http://www.perseus.tufts.edu/hopper/morph?l='+ word + '&la='+langCode, true);
 			xhttp.setRequestHeader("cache-control", "no-cache");
 			xhttp.send();
-
-			// var xhttp2 = new XMLHttpRequest();
-			// xhttp2.onreadystatechange = function() {
-			// 	if (xhttp2.readyState == 4 && xhttp2.status == 200 && xhttp.readyState == 4 && xhttp.status == 200) {
-			// 		var response = [word, perseus, xhttp2.responseText];
-			// 		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("ajax", response);
-			// 	}
-			// };
-			// xhttp2.open("GET", 'http://archives.nd.edu/cgi-bin/wordz.pl?keyword='+ word, true);
-			// xhttp2.setRequestHeader("cache-control", "no-cache");
-			// xhttp2.send();
 		}
     }
 </script>

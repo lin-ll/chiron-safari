@@ -27,6 +27,7 @@
   border-radius: 3px;
 }
 
+
 /*
 .paideia-table Style - This is what you want
 ------------------------------------------------------------------ */
@@ -46,9 +47,9 @@
   text-decoration:underline;
 }
 .paideia-table {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Geneva, sans-serif;
+  font-size: 12px;
   color:#666;
-  font-size:12px;
   text-shadow: 1px 1px 0px #fff;
   background:#eaebec;
   margin:20px;
@@ -88,6 +89,8 @@
 .paideia-table tr{
   text-align: center;
   padding-left:20px;
+  font-family: Geneva, sans-serif;
+  font-size: 12px;
 }
 .paideia-table tr td:first-child{
   text-align: left;

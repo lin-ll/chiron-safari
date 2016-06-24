@@ -32,11 +32,12 @@ function handleMessage(msgEvent) {
 
 function quizlet() {
 	insertDiv('<div id="paideia-panel"><b>Just copy and paste the text below into the import space when creating a Quizlet set.</b><br>' + 
-		'<div id="vocab"><pre style="font-size: 12px; font-family: Geneva, sans-serif; text-align: left;">' + 
-		saved + '</pre></div>' + 
+		'<div id="vocab"><pre style="font-size: 12px; font-family: Geneva, sans-serif; text-align: left; '
+		+ 'white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; '
+		+ 'white-space: -o-pre-wrap; word-wrap: break-word;">' + saved + '</pre></div>' + 
 		'<button id="copy">Highlight, then Ctrl/Cmd-C to copy!</button>' + 
 		'<button id="go-quizlet">Open Quizlet in new tab!</button>' + 
-		'<button id="remove">Close</button></div>');
+		'<button id="remove">Close</button><br></div>');
 	$('#remove').click(rmPanel);
 	document.getElementById('copy').addEventListener('click', function() { selectText('vocab'); });
 	document.getElementById('go-quizlet').addEventListener('click', function() {
@@ -59,22 +60,20 @@ function selectText(containerid) {
 function parseAjax(response) {
 	var word = response[0];
 	var toReturn = response[1];
-	// console.log(response[2]);
-	var thanks = '<hr style="margin-top: 2em;" /><footer style="font-size:10px; text-align: left;">Morphology provided by Morpheus from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> at Tufts University.</footer>';
+
+	var thanks = '<hr style="margin-top: 2em;" /><footer style="font-size:10px; text-align: left;"><img src="' + safari.extension.baseURI + 'paideia.png' + '" alt="Paideia Icon" style="width:5em;height:5em;float:left;">Chromium was developed by the <a href="http://paideiainstitute.org">Paideia Institute for Humanistic Study</a>.<br>Morphology provided by Morpheus from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> at Tufts University.</footer>';
 	var perseus = $('<div/>').html(toReturn).contents();
 	lemma = perseus.find('.lemma');
 	resultFound = perseus.find('.lemma').html(); // will be undefined if perseus finds no results
     if (resultFound) {
 		var header = lemma.find('.lemma_header').prop('outerHTML');
-		//console.log(lemma.find('.lemma_definition')[0]);
-		// alert(lemma.find('.lemma_definition')[0]);
-		//console.log(lemma.getElementsByClassName('lemma_definition'));
 		var def = lemma.find('.lemma_definition')[0].innerHTML;
 		var word_saved = lemma.find('.' + lang)[0].innerHTML;
 		saved += word_saved + '\t' + def.trim() + '\n';
 		console.log(saved);
 		table = lemma.find('table').addClass('paideia-table').prop('outerHTML');
-		insertDiv('<div id="paideia-panel"><button id="remove" style="float: right;">X</button>' + header + "<br />" + table + anotherDictionary(word) + thanks + '</div>');
+		insertDiv('<div id="paideia-panel"><button id="remove" style="float: right;">X</button>' + 
+			header + "<br /><h4>Possible Forms:</h4>" + table + anotherDictionary(word) + thanks + '</div>');
 		$('#remove').click(rmPanel);
     } 
     else manualSearch(word);
@@ -85,7 +84,7 @@ function anotherDictionary(word) {
 	'<ul class="another-dict">' + 
 		'<li><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></li>' + 
 		'<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=' + 
-			word + '&lang=' + lang + '">Perseus LSJ</a></li>' + 
+			word + '&lang=' + lang + '">Perseus</a></li>' + 
 	'</ul>'
 }
 
@@ -97,8 +96,10 @@ function rmPanel() {
 function insertDiv(child) {
 	var div = document.createElement('div');
 	div.setAttribute('id', 'paideia-panel');
-	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; border: 1px solid #007095; border-radius: 2em; max-width: 34em; word-wrap: break-word; background-color: aliceblue; z-index:999;');
-
+	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; '
+    +'border: 1px solid #007095; border-radius: 2em; max-width: 34em; max-height: 400px; '
+    + 'overflow-y: scroll; word-wrap: break-word; background-color: aliceblue; z-index:999;');
+    
 	rmPanel()
 
 	var rawHTML = child;
