@@ -1,7 +1,52 @@
-#paideia-panel {
-  font-family: Geneva, sans-serif;
-  font-size: 12px;
+.container {
+	font-family: "Helvetica", sans-serif !important;
 }
+
+.container p{
+	font-size: 12px;
+	font-family: "Helvetica", sans-serif !important;
+}
+
+#paideia-panel {
+	font-family: "Helvetica", sans-serif !important;
+}
+
+#paideia-panel h4{
+  margin: 0;
+  font-size: 16px !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+  font-weight: normal !important;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#paideia-panel p{
+  font-size: 12px;
+  font-family: "Helvetica", sans-serif !important;
+}
+
+.lemma_definition {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#paideia-panel footer{
+	font-size: 11px;
+	text-align: left;
+}
+
+#vocab pre{
+	font-size: 12px; 
+	font-family: "Helvetica", sans-serif; 
+	text-align: left; 
+	white-space: pre-wrap; 
+	white-space: -moz-pre-wrap; 
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap; 
+	word-wrap: break-word;
+}
+
 .paideia-input input[type="text"] {
   width: 90%;
   padding: 10px;
@@ -13,8 +58,10 @@
   border: solid 1px #707070;
   box-shadow: 0 0 5px 1px #969696;
 }
+
 .another-dict li{
-  font-size: 12px;
+  font-size: 12px !important;
+  font-family: "Helvetica", sans-serif !important;
 }
 
 .paideia-button {
@@ -26,6 +73,8 @@
   border-color: aliceblue;
   border-radius: 3px;
 }
+
+
 
 
 /*
@@ -47,23 +96,37 @@
   text-decoration:underline;
 }
 .paideia-table {
-  font-family: Geneva, sans-serif;
-  font-size: 12px;
+  font-family: "Helvetica", sans-serif; 
+  font-size: small;
   color:#666;
-  text-shadow: 1px 1px 0px #fff;
-  background:#eaebec;
+  /*text-shadow: 1px 1px 0px #fff;*/
+  /*background:#eaebec;*/
   margin:20px;
-  border:#ccc 1px solid;
-
+  margin-left: 0px;
+  border-collapse: collapse !important;
+  /*border:#ccc 1px solid;*/
+/*
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   border-radius:3px;
 
   -moz-box-shadow: 0 1px 2px #d1d1d1;
   -webkit-box-shadow: 0 1px 2px #d1d1d1;
-  box-shadow: 0 1px 2px #d1d1d1;
+  box-shadow: 0 1px 2px #d1d1d1;*/
 }
-.paideia-table th {
+.paideia-table td{
+  text-align: left !important;
+  padding-right: 20px !important;
+  font-family: "Helvetica", sans-serif !important;
+  font-size: small !important;
+}
+
+.paideia-table thead td {
+	font-size: medium !important;
+	border-bottom: 1px solid black;
+	font-style: italic;
+}
+/*.paideia-table th {
   padding:21px 25px 22px 25px;
   border-top:1px solid #fafafa;
   border-bottom:1px solid #e0e0e0;
@@ -86,12 +149,6 @@
   -webkit-border-top-right-radius:3px;
   border-top-right-radius:3px;
 }
-.paideia-table tr{
-  text-align: center;
-  padding-left:20px;
-  font-family: Geneva, sans-serif;
-  font-size: 12px;
-}
 .paideia-table tr td:first-child{
   text-align: left;
   padding-left:20px;
@@ -102,9 +159,6 @@
   border-top: 1px solid #ffffff;
   border-bottom:1px solid #e0e0e0;
   border-left: 1px solid #e0e0e0;
-
-  font-family: Geneva, sans-serif;
-  font-size: 12px;
 
   background: #fafafa;
   background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
@@ -127,7 +181,7 @@
   -moz-border-radius-bottomright:3px;
   -webkit-border-bottom-right-radius:3px;
   border-bottom-right-radius:3px;
-}
+}*/
 .paideia-table tr:hover td{
   background: #f2f2f2;
   background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
