@@ -31,7 +31,7 @@ function handleMessage(msgEvent) {
 }
 
 function quizlet() {
-	insertDiv('<div id="paideia-panel"><b>Just copy and paste the text below into the import space when creating a Quizlet set.</b><br>' + 
+	insertDiv('<div id="paideia-panel"><h2 style="font-size:14px;font-weight:bold;margin:0;font-family:inherit;">Just copy and paste the text below into the import space when creating a Quizlet set.</h2>' + 
 		'<div id="vocab"><pre>' + saved + '</pre></div>' + 
 		'<button id="copy">Highlight, then Ctrl/Cmd-C to copy!</button>' + 
 		'<button id="go-quizlet">Open Quizlet in new tab!</button>' + 
@@ -71,7 +71,7 @@ function parseAjax(response) {
 		console.log(saved);
 		table = lemma.find('table').addClass('paideia-table').prop('outerHTML');
 
-		insertDiv('<div id="paideia-panel"><button id="remove" style="float: right;">X</button>' + 
+		insertDiv('<div id="paideia-panel"><h4 id="remove" style="float: right; cursor:pointer; margin-top: 0px;">X</h4>' + 
 			header + table + anotherDictionary(word) + thanks + '</div>');
 
 		var thead = document.getElementsByClassName("paideia-table")[0].createTHead();
@@ -86,7 +86,7 @@ function parseAjax(response) {
 }
 
 function anotherDictionary(word) {
-	return '<p>Try this word in another dictionary: </p>' + 
+	return '<h5>Try this word in another dictionary: </h5>' + 
 	'<ul class="another-dict">' + 
 		'<li><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></li>' + 
 		'<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=' + 
@@ -103,9 +103,8 @@ function insertDiv(child) {
 	var div = document.createElement('div');
 	div.setAttribute('id', 'paideia-panel');
 	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; '
-    +'border: 1px solid #007095; border-radius: 2em; width: 34em; max-height: 400px; '
-    + 'overflow-y: scroll; word-wrap: break-word; background-color: aliceblue; z-index:999;'
-    + 'font-family: "Times New Roman", Times, serif; font-size: 12px;');
+    +'border: 1px solid #007095; border-radius: 2em; width: 35%; max-height: 50%; '
+    + 'overflow-y: scroll; word-wrap: break-word; background-color: aliceblue; z-index:999;');
     
 	rmPanel()
 
@@ -119,10 +118,10 @@ function insertDiv(child) {
 function manualSearch(word) {
   	insertDiv(
 		'<div class="container" id="paideia-panel"><div class="row">' +
-		'<p style="text-align: center; font-size: 14px; font-weight: bold;">Sorry!</p> ' +
-		'<p>We couldn\'t find any results for this entry.</p>' +
+		'<p style="text-align: center; font-size: 16px; font-weight: bold;">Sorry!</p> ' +
+		'<h5>We couldn\'t find any results for this entry.</h5>' +
 		anotherDictionary(word) +
-		'<p>Or try typing the word manually:</p>' +
+		'<h5>Or try typing the word manually:</h5>' +
 		'</div><div class="row">' +
 		'<div class="col-xs-6 col-xs-offset-3 paideia-input">' +
 		'  <input type="text" id="manual-paideia-entry" class="form-control" placeholder="type your word here...">' +
