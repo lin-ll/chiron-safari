@@ -71,8 +71,8 @@ function parseAjax(response) {
 		console.log(saved);
 		table = lemma.find('table').addClass('paideia-table').prop('outerHTML');
 
-		insertDiv('<div id="paideia-panel"><h4 id="remove" style="float: right; cursor:pointer; margin-top: 0px;">X</h4>' + 
-			header + table + anotherDictionary(word) + thanks + '</div>');
+		insertDiv('<div id="paideia-panel"><h4 id="remove" style="float: right; cursor:pointer; margin-top: 0px;">X</h4>' + anotherDictionary(word) + 
+			header + table + thanks + '</div>');
 
 		var thead = document.getElementsByClassName("paideia-table")[0].createTHead();
 		var row = thead.insertRow();
@@ -86,12 +86,14 @@ function parseAjax(response) {
 }
 
 function anotherDictionary(word) {
-	return '<h5>Try this word in another dictionary: </h5>' + 
-	'<ul class="another-dict">' + 
-		'<li><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></li>' + 
-		'<li><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=' + 
-			word + '&lang=' + lang + '">Perseus</a></li>' + 
-	'</ul>'
+	return '<div id="another-div"><h5 style="padding-bottom:0.7em;"">Try this word in another dictionary: </h5>' + 
+	'<div class="another-dict">' +
+	'<img src="' + safari.extension.baseURI + 'logeion.jpeg' + '" alt="Logeion Icon" style="width:0.7em;height:0.7em;">' +
+		'<h3><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></h3>' + 
+		'<img src="' + safari.extension.baseURI + 'perseus.jpeg' + '" alt="Perseus Icon" style="width:0.7em;height:0.7em;">' +
+		'<h3><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=' + 
+			word + '&lang=' + lang + '">Perseus</a></h3>' + 
+	'</div></div>'
 }
 
 function rmPanel() {
@@ -103,7 +105,7 @@ function insertDiv(child) {
 	var div = document.createElement('div');
 	div.setAttribute('id', 'paideia-panel');
 	div.setAttribute('style', 'position: fixed; top: 1em; right: 1em; padding: 10px 20px; '
-    +'border: 1px solid #007095; border-radius: 2em; width: 35%; max-height: 50%; '
+    +'border: 1px solid #007095; border-radius: 1em; width: 35%; max-height: 50%; '
     + 'overflow-y: scroll; word-wrap: break-word; background-color: aliceblue; z-index:999;');
     
 	rmPanel()
@@ -119,8 +121,10 @@ function manualSearch(word) {
   	insertDiv(
 		'<div class="container" id="paideia-panel"><div class="row">' +
 		'<p style="text-align: center; font-size: 16px; font-weight: bold;">Sorry!</p> ' +
-		'<h5>We couldn\'t find any results for this entry.</h5>' +
-		anotherDictionary(word) +
+		'<h5 style="padding-bottom:0.7em;">We couldn\'t find any results for this entry. Try this word in another dictionary:</h5>' +
+		'<h3><a target="_blank" href="http://logeion.uchicago.edu/index.html#'+ word + '">Logeion</a></h3>' + 
+		'<h3><a target="_blank" href="http://www.perseus.tufts.edu/hopper/resolveform?type=exact&lookup=' + 
+			word + '&lang=' + lang + '">Perseus</a></h3><br>' + 
 		'<h5>Or try typing the word manually:</h5>' +
 		'</div><div class="row">' +
 		'<div class="col-xs-6 col-xs-offset-3 paideia-input">' +

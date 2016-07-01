@@ -9,12 +9,21 @@
 	font-family: "Helvetica", sans-serif !important;
 	line-height: normal !important;
 }
+#another-div {
+	float: right;
+	margin: 15px;
+	width:90px;
+	background-color: white;
+	padding: 20px 15px 15px 15px;
+	margin-top:-20px;
+	text-align: center;
+}
 #paideia-panel h4{
   margin: 0;
   font-size: 16px !important;
   text-align: left !important;
   text-transform: uppercase !important;
-  font-weight: normal !important;
+  font-weight: bold !important;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -24,13 +33,20 @@
 	font-style: italic !important;
 	font-weight: normal !important;
 }
+#paideia-panel h3 {
+	margin: 1px !important; 
+	font-family: "Helvetica", sans-serif !important;
+	font-size: 12px !important; 
+	font-weight: normal !important;
+	text-align: center !important;
+}
 #paideia-panel p{
   font-size: 12px;
   font-family: "Helvetica", sans-serif !important;
 }
 .lemma_definition {
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: normal;
 }
 #paideia-panel footer{
 	font-size: 11px;
@@ -57,12 +73,6 @@
 .paideia-input input[type="text"].focus {
   border: solid 1px #707070;
   box-shadow: 0 0 5px 1px #969696;
-}
-.another-dict li{
-  font-size: 12px !important;
-  font-family: "Helvetica", sans-serif !important;
-  list-style-type: disc !important;
-  list-style-position: outside !important;
 }
 .paideia-button {
   padding: 5px;
@@ -111,6 +121,7 @@
 	font-size: medium !important;
 	border-bottom: 1px solid black;
 	font-style: italic;
+	font-weight: bold;
 }
 .paideia-table tr:hover td{
   background: #f2f2f2;
