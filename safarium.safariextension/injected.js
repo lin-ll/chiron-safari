@@ -59,7 +59,7 @@ function parseAjax(response) {
 	var word = response[0];
 	var toReturn = response[1];
 
-	var thanks = '<hr style="margin-top: 2em;" /><footer><img src="' + safari.extension.baseURI + 'paideia.png' + '" alt="Paideia Icon" style="width:5em;height:5em;float:left;">Chromium was developed by the <a href="http://paideiainstitute.org">Paideia Institute for Humanistic Study</a>.<br>Morphology provided by Morpheus from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> at Tufts University.</footer>';
+	var thanks = '<hr style="margin-top: 2em;" /><footer><img src="' + safari.extension.baseURI + 'paideia.png' + '" alt="Paideia Icon" style="width:5em;height:5em;float:left;">Chiron was developed by the <a href="http://paideiainstitute.org">Paideia Institute for Humanistic Study</a>.<br>Morphology provided by Morpheus from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> at Tufts University.</footer>';
 	var perseus = $('<div/>').html(toReturn).contents();
 	lemma = perseus.find('.lemma');
 	resultFound = perseus.find('.lemma').html(); // will be undefined if perseus finds no results

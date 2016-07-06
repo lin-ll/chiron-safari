@@ -7,9 +7,9 @@
 	<key>Builder Version</key>
 	<string>11601.6.17</string>
 	<key>CFBundleDisplayName</key>
-	<string>Safarium</string>
+	<string>Chiron</string>
 	<key>CFBundleIdentifier</key>
-	<string>paideia.safarium</string>
+	<string>paideia.chiron</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -67,13 +67,13 @@
 		<array>
 			<dict>
 				<key>Identifier</key>
-				<string>safarium</string>
+				<string>chiron</string>
 				<key>Image</key>
 				<string>Icon.png</string>
 				<key>Include By Default</key>
 				<true/>
 				<key>Label</key>
-				<string>Safarium</string>
+				<string>Chiron</string>
 				<key>Popover</key>
 				<string>popup</string>
 			</dict>
@@ -100,7 +100,7 @@
 	<key>Description</key>
 	<string>Look up Latin or Greek words directly in your webpage.</string>
 	<key>DeveloperIdentifier</key>
-	<string>0000000000</string>
+	<string>Y6UY4B5H6A</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -114,6 +114,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>http://www.paideiainstitute.org/chromium</string>
+	<string>http://www.paideiainstitute.org/chiron</string>
 </dict>
 </plist>
