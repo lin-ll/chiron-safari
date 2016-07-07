@@ -89,7 +89,7 @@
 			</array>
 			<key>Start</key>
 			<array>
-				<string>jquery-1.11.1.min.js</string>
+				<string>jquery-3.0.0.min.js</string>
 			</array>
 		</dict>
 		<key>Stylesheets</key>
@@ -100,7 +100,7 @@
 	<key>Description</key>
 	<string>Look up Latin or Greek words directly in your webpage.</string>
 	<key>DeveloperIdentifier</key>
-	<string>0000000000</string>
+	<string>Y6UY4B5H6A</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
