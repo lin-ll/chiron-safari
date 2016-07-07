@@ -1,3 +1,34 @@
+#copy, #go-quizlet, #remove2 {
+  align-items: flex-start !important;
+  text-align: center !important;
+  cursor: default !important;
+  color: buttontext !important;
+  border-image-source: initial !important;
+  border-image-slice: initial !important;
+  border-image-width: initial !important;
+  border-image-outset: initial !important;
+  border-image-repeat: initial !important;
+  background-color: white !important;
+  box-sizing: border-box !important;
+  padding: 2px 6px 3px !important;
+  border-width: 2px !important;
+  border-style: outset !important;
+  border-color: buttonface !important;
+  text-rendering: auto !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+  text-indent: 0px !important;
+  text-shadow: none !important;
+  display: inline-block !important;
+  margin: 2px !important;
+  font: 11px BlinkMacSystemFont !important;
+  -webkit-writing-mode: horizontal-tb !important;
+  -webkit-appearance: button !important;
+}
+#copy:active, #go-quizlet:active, #remove2:active {
+  background-color: gray !important;
+}
 .container {
 	font-family: "Helvetica", sans-serif !important;
 }
@@ -17,6 +48,9 @@
 	padding: 20px 15px 15px 15px;
 	margin-top:-20px;
 	text-align: center;
+}
+#paideia-panel h2{
+  line-height: inherit;
 }
 #paideia-panel h4{
   margin: 0;
@@ -52,6 +86,8 @@
 	font-size: 11px;
 	text-align: left;
 	font-style: italic;
+	background-color: inherit !important;
+	color: black !important;
 }
 #vocab pre{
 	font-size: 12px; 
@@ -116,7 +152,9 @@
   font-family: "Helvetica", sans-serif !important;
   font-size: small !important;
 }
-
+.paideia-table thead {
+	background: inherit !important;
+}
 .paideia-table thead td {
 	font-size: medium !important;
 	border-bottom: 1px solid black;

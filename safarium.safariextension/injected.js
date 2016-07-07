@@ -35,8 +35,8 @@ function quizlet() {
 		'<div id="vocab"><pre>' + saved + '</pre></div>' + 
 		'<button id="copy">Highlight, then Ctrl/Cmd-C to copy!</button>' + 
 		'<button id="go-quizlet">Open Quizlet in new tab!</button>' + 
-		'<button id="remove">Close</button><br></div>');
-	$('#remove').click(rmPanel);
+		'<button id="remove2">Close</button><br></div>');
+	$('#remove2').click(rmPanel);
 	document.getElementById('copy').addEventListener('click', function() { selectText('vocab'); });
 	document.getElementById('go-quizlet').addEventListener('click', function() {
 		safari.self.tab.dispatchMessage("open-quizlet", "https://quizlet.com/create-set");

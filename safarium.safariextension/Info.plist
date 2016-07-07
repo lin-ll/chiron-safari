@@ -100,7 +100,7 @@
 	<key>Description</key>
 	<string>Look up Latin or Greek words directly in your webpage.</string>
 	<key>DeveloperIdentifier</key>
-	<string>Y6UY4B5H6A</string>
+	<string>0000000000</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -114,6 +114,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>http://www.paideiainstitute.org/chiron</string>
+	<string>http://www.paideiainstitute.org/chromium</string>
 </dict>
 </plist>
