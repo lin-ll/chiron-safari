@@ -50,7 +50,7 @@
 	text-align: center;
 }
 #paideia-panel h2{
-  line-height: inherit;
+  line-height: inherit !important;
 }
 #paideia-panel h4{
   margin: 0;

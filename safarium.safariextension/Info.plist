@@ -22,34 +22,6 @@
 		<integer>1048576</integer>
 		<key>Global Page</key>
 		<string>global.html</string>
-		<key>Menus</key>
-		<array>
-			<dict>
-				<key>Identifier</key>
-				<string>menu</string>
-				<key>Menu Items</key>
-				<array>
-					<dict>
-						<key>Command</key>
-						<string>latin</string>
-						<key>Disabled</key>
-						<false/>
-						<key>Identifier</key>
-						<string>latin</string>
-						<key>Title</key>
-						<string>Translate Latin</string>
-					</dict>
-					<dict>
-						<key>Command</key>
-						<string>greek</string>
-						<key>Identifier</key>
-						<string>greek</string>
-						<key>Title</key>
-						<string>Translate Greek</string>
-					</dict>
-				</array>
-			</dict>
-		</array>
 		<key>Popovers</key>
 		<array>
 			<dict>
